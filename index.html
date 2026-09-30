@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Expense & Budget Dashboard</title>
+  
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <header class="text-center my-4">
+  <h1 class="main-title">Smart Expense & Budget Dashboard</h1>
+  <p class="sub-title">Track your daily income, manage budgets, and analyze spending habits seamlessly.</p>
+</header>
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <div class="card bg-primary text-white p-3 shadow-sm text-center">
+          <h5>Total Budget</h5>
+          <h3 id="total-budget-display">$0</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-danger text-white p-3 shadow-sm text-center">
+          <h5>Total Expenses</h5>
+          <h3 id="total-expense-display">$0</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-success text-white p-3 shadow-sm text-center" id="balance-card">
+          <h5>Remaining Balance</h5>
+          <h3 id="remaining-balance-display">$0</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alert Message Container -->
+    <div id="alert-box"></div>
+
+    <div class="row g-4">
+      <!-- Left Column: Budget & Add Expense Form -->
+      <div class="col-md-5">
+        <!-- Set Budget Card -->
+        <div class="card p-3 shadow-sm mb-3">
+          <h5 class="card-title text-secondary">Set Monthly Budget</h5>
+          <div class="input-group mt-2">
+            <input type="number" id="budget-input" class="form-control" placeholder="Enter Total Budget">
+            <button class="btn btn-primary" id="set-budget-btn">Set</button>
+          </div>
+        </div>
+
+        <!-- Add Expense Form -->
+        <div class="card p-3 shadow-sm">
+          <h5 class="card-title text-secondary mb-3">Add New Expense</h5>
+          <form id="expense-form">
+            <div class="mb-3">
+              <label class="form-label">Expense Title</label>
+              <input type="text" id="expense-title" class="form-control" placeholder="e.g. Lunch, Petrol" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Amount</label>
+              <input type="number" id="expense-amount" class="form-control" placeholder="e.g. 500" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Category</label>
+              <select id="expense-category" class="form-select" required>
+                <!-- JS se populate karenge -->
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Add Expense</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right Column: Filter & Expense List -->
+      <div class="col-md-7">
+        <div class="card p-3 shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title text-secondary m-0">Recent Expenses</h5>
+            
+            <!-- Category Filter Dropdown -->
+            <div class="w-50">
+              <select id="filter-category" class="form-select form-select-sm">
+                <!-- JS se populate karenge -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Expense Table -->
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Title</th>
+                  <th>Amount</th>
+                  <th>Category</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="expense-list-tbody">
+                <!-- JS se dynamically dynamic rows aayengi -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
