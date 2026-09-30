@@ -1,4 +1,6 @@
-## ✨ Features
+# 💰 Smart Expense & Budget Dashboard
+
+A modern, responsive, and easy-to-use web application built to help users manage their monthly budgets, track daily expenses, and analyze spending habits efficiently.## ✨ Features
 
 - **Set Monthly Budget:** Easily define and update your total monthly budget.
 - **Track Expenses:** Add new expenses with titles, amounts, and specific categories.
